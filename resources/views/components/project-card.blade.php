@@ -18,12 +18,13 @@
 ])
 
 <article {{ $attributes->merge([
-    'class' => 'flex flex-col bg-white p-6 shadow-sm transition duration-150 ease-in-out hover:shadow-md sm:rounded-lg',
+    'class' => 'flex flex-col bg-white p-6 shadow-sm transition duration-150 ease-in-out hover:shadow-md
+                sm:rounded-lg dark:bg-gray-900 dark:shadow-black/20',
 ]) }}>
     <div class="flex items-start justify-between gap-4">
-        <h3 class="text-base font-semibold text-gray-900">
+        <h3 class="text-base font-semibold text-gray-900 dark:text-gray-100">
             @if ($href)
-                <a href="{{ $href }}" class="rounded-sm transition hover:text-indigo-600 focus:outline-hidden focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                <a href="{{ $href }}" class="rounded-sm transition hover:text-indigo-600 focus:outline-hidden focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:ring-offset-gray-900 dark:hover:text-indigo-400">
                     {{ $title }}
                 </a>
             @else
@@ -32,12 +33,12 @@
         </h3>
 
         @if ($year)
-            <span class="shrink-0 text-xs font-medium uppercase tracking-widest text-gray-400">{{ $year }}</span>
+            <span class="shrink-0 text-xs font-medium uppercase tracking-widest text-gray-400 dark:text-gray-500">{{ $year }}</span>
         @endif
     </div>
 
     @if ($description)
-        <p class="mt-2 text-sm leading-relaxed text-gray-600">{{ $description }}</p>
+        <p class="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{{ $description }}</p>
     @endif
 
     @isset($stack)
